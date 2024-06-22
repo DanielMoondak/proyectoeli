@@ -1,13 +1,13 @@
 import os
-from flask import Flask, jsonify, send_from_directory, render_template
+from flask import Flask, jsonify, send_file, render_template
 import pandas as pd
 
 app = Flask(__name__)
 
-# Ruta para servir el archivo index.html desde la carpeta static
+# Ruta para servir el archivo index.html desde la raíz del proyecto
 @app.route('/')
 def index():
-    return send_from_directory('static', 'index.html')
+    return send_file('index.html')
 
 # Ruta para servir el dashboard.html desde la carpeta templates
 @app.route('/dashboard')
